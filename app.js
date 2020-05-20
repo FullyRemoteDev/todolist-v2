@@ -10,8 +10,8 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-const dbUserName = "admin-jag";
-const dbPassword = process.env.dbpassword;
+const dbUserName = process.env.DBUSERNAME;
+const dbPassword = process.env.DBPASSWORD;
 const dbName = "todolistDB";
 
 const uri = "mongodb+srv://" + dbUserName + ":" + dbPassword + "@cluster0-7gdhh.mongodb.net/" + dbName + "?retryWrites=true&w=majority";
